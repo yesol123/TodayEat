@@ -1,0 +1,7 @@
+@mixin mp-reset {margin:0; padding:0}
+
+/* 폰트 설정 */
+
+@mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
+@mixin pr-r {font-family: 'pretendard'; font-weight: 500; @content;}
+@mixin pr-l {font-family: 'pretendard'; font-weight: 100; @content;}

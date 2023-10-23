@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="./js/common.js"></script>
+    <script defer src ="./js/write.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+    <script>
+        function formSubmit(){
+            alert(" 작성 완료 ");
+            location.href='./';
+            return false;
+        }
+    </script>
+
+    <header></header>
+    <main class="wr">
+        <article class="write_title">
+            <h2>당신의 후기를 들려주세요</h2>
+        </article>
+
+        <section class="write_box">
+            <form onsubmit="return formSubmit()">
+                <div class="heart" style="margin-bottom:30px;">
+                    <p><span>가게 이름</span>에 대한 솔직한 리뷰를 써주세요</p>
+                    <div class="click">
+                        <div style="display: flex; justify-content: space-between; margin-bottom:10px;">
+                            <a><input type="radio" name="point" ><span>1점</span></a>
+                            <a><input type="radio" name="point" ><span>2점</span></a>
+                            <a><input type="radio" name="point" ><span>3점</span></a>
+                            <a><input type="radio" name="point" ><span>4점</span></a>
+                            <a><input type="radio" name="point" ><span>5점</span></a>
+                        </div>
+                        <ul>
+                        <li><img src="./images/sub_3/star0.png" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <textarea placeholder="이용하신 가게는 어떠셨나요? 분위기와 서비스도 궁금해요!" name="comment" id="comment" rows="10" cols="2"></textarea>
+                
+                <div class="file">
+                    <label for="">
+                        <input class="file" type="file" name="file">
+                    </label>
+                    <div>
+                        <button type="submit">작성완료</button>
+                        <button type="button" onclick="location.href='./' ">취소</button>
+                    </div>
+                </div>
+                
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

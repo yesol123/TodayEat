@@ -1,0 +1,2113 @@
+@charset "UTF-8";
+/* 폰트 설정 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+/* reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+figure, article {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.code_insert {
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+}
+header > section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  width: 1200px;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+header > section > figure {
+  width: 220px;
+}
+header > section > nav {
+  width: calc(100% - 220px);
+}
+header > section > nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+header > section > nav > ul > li {
+  position: relative;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+header > section > nav > ul > li.active {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+header > section > nav > ul > li > ul {
+  position: absolute;
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+  width: 150px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  left: -30px;
+}
+header > section > nav > ul > li > ul > li {
+  padding: 10px 0;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+}
+footer > section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 1200px;
+  margin: 0px auto;
+  display: flex;
+}
+footer > .gnb {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: #fff;
+  z-index: 10;
+}
+footer > .gnb > ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+footer > .gnb > ul > li {
+  width: 25%;
+  padding: 10px 0;
+}
+footer > .gnb > ul > li > figure img {
+  width: 45px;
+  height: 45px;
+}
+footer > .gnb > ul > li > figure > figcaption {
+  margin-top: 10px;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+header.sub {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 6;
+}
+
+footer.sub::before {
+  content: "";
+  background-image: url("../images/KakaoTalk_20230808_171021953.png");
+  width: 431px;
+  height: 672px;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+footer.sub::after {
+  content: "";
+  background-image: url("../images/KakaoTalk_20230808_171021953_01.png");
+  width: 340px;
+  height: 247px;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.tgnb {
+  width: 1200px;
+  margin: 20px auto;
+}
+.tgnb ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  height: 45px;
+}
+.tgnb ul li {
+  padding: 0 20px;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .tgnb {
+    width: 100%;
+  }
+  header {
+    position: fixed;
+  }
+  header > section {
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header > section > nav {
+    width: 100%;
+  }
+  header > section > nav > ul {
+    justify-content: center;
+  }
+  header.sub {
+    position: sticky;
+  }
+}
+@media (max-width: 480px) {
+  header > section > nav {
+    display: none;
+  }
+  footer .gnb {
+    display: block;
+    z-index: 10;
+  }
+  footer.sub::before {
+    display: none;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.detaild, .look-detail2 > div:nth-of-type(2) {
+  cursor: pointer;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.column > div {
+  margin-bottom: 10px;
+  height: 25px;
+  color: #787878;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon {
+  width: 17px;
+}
+
+.deco-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10%;
+}
+
+.deco-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+}
+
+.main {
+  background-image: url("../images/main-img/summer_bg_main_map.jpg.png");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.main .eat_title > span {
+  display: none;
+}
+.main::before {
+  content: "";
+  z-index: 0;
+  top: 0;
+  width: 206px;
+  height: 275px;
+  background-image: url(../images/main-img/div.visual-deco-left.png);
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.main::after {
+  content: "";
+  z-index: -1;
+  width: 174px;
+  height: 366px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-position: right top;
+  background-size: 100%;
+  background-image: url("../images/main-img/div.visual-deco-right.png");
+}
+.main > article {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.main > article > button {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 20vh;
+  font-size: 40px;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  z-index: 10;
+  color: #000;
+}
+.main > article canvas {
+  margin-left: 15%;
+  cursor: grab;
+}
+.main > article canvas.active {
+  cursor: grabbing;
+}
+.main > article canvas.over {
+  cursor: pointer;
+}
+.main > article .store {
+  width: 430px;
+  height: 610px;
+  border-radius: 20px 20px 6px 6px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 5;
+}
+.main > article .store .eat_title figure {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: center;
+}
+.main > article .store .eat_title figure > p {
+  margin: 5px 0;
+}
+.main > article .store .eat_title figure .eat_logo {
+  height: 40px;
+}
+.main > article .store .eat_title figure figcaption h2 {
+  margin: 0;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+}
+.main > article .store .eat_list {
+  margin-top: 20px;
+  height: 88%;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 3px;
+}
+.main > article .store .eat_list::-webkit-scrollbar {
+  width: 3px;
+}
+.main > article .store .eat_list::-webkit-scrollbar-thumb {
+  background-color: #000;
+}
+.main > article .store .eat_list::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+.main > article .store .eat_list li {
+  width: 48%;
+}
+.main > article .store .eat_list li p {
+  height: 155px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.main > article .store .eat_list li p img {
+  height: 100%;
+}
+.main > article .store .eat_list li h2 {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 16px;
+}
+.main > article .store .padding {
+  padding: 5px;
+}
+.main > article .store .store-img {
+  width: 100%;
+}
+.main > article .store .store-img figure {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.main > article .store .store-img figure > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main > article .store .store-name {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 22px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main > article .store .store-name p {
+  margin: 0;
+}
+.main > article .store .store-name p > i {
+  color: #b3b3b3;
+  font-size: 30px;
+}
+.main > article .store .store-name p.active i {
+  color: red;
+}
+.main > article .store .look-detail1 {
+  color: #BB4F59;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 18px;
+  display: none;
+  margin-right: 15px;
+  gap: 10px;
+}
+.main > article .store .look-detail2 {
+  color: #BB4F59;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  margin-right: 15px;
+  gap: 10px;
+  border-top: 1px solid lightgray;
+  padding-top: 20px;
+}
+.main > article .char1 {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 300px;
+  z-index: 3;
+}
+.main > article .char2 {
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  width: 400px;
+  z-index: 3;
+}
+.main > article .char3 {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  width: 140px;
+  z-index: 3;
+}
+.main > article .char4 {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  width: 400px;
+  z-index: 5;
+}
+.main > article .char5 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 1920px;
+  z-index: 0;
+  opacity: 50%;
+}
+.main > article .char6 {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: 300px;
+  z-index: 3;
+}
+.main > article .char7 {
+  position: absolute;
+  left: 7%;
+  bottom: 40%;
+  width: 100px;
+  z-index: 3;
+  transform: rotateY(180deg);
+}
+.main > article .char8 {
+  position: absolute;
+  right: 7%;
+  bottom: 25%;
+  width: 100px;
+  z-index: 3;
+}
+
+@media (max-width: 1200px) {
+  .char1, .char2, .char3, .char4, .char7, .char8 {
+    display: none;
+  }
+  .main > article .char5 {
+    width: 100%;
+  }
+  .main > article .char6 {
+    display: none;
+  }
+  .main > article .store {
+    width: 90%;
+    height: 330px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: 0 auto;
+  }
+  .main > article .store.active {
+    flex-direction: column;
+  }
+  .main > article .store .store-img {
+    width: 48%;
+    margin-right: 20px;
+  }
+  .main > article .store .store-img > figure {
+    height: 250px;
+  }
+  .main > article .store .store-name {
+    margin-top: 0;
+  }
+  .main > article .store .look-detail1 {
+    display: flex;
+    margin-top: 20px;
+  }
+  .main > article .store .look-detail2 {
+    display: none;
+  }
+  .main > article .store .eat_title {
+    justify-content: start;
+  }
+  .main > article .store .eat_title figure {
+    height: 40px;
+    gap: 10px;
+    align-items: center;
+  }
+  .main > article .store .eat_title figure .eat_logo {
+    height: 40px;
+  }
+  .main > article .store .eat_title figure figcaption h2 {
+    margin: 0;
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .main > article .store .eat_list li {
+    width: 18%;
+  }
+}
+@media (max-width: 480px) {
+  .main > article canvas {
+    margin-left: -136.609px;
+    transform: scale(0.7);
+    position: relative;
+    top: 0;
+    bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .char1, .char2, .char3, .char4, .char7, .char8 {
+    display: none;
+  }
+  .main > article .char6 {
+    display: none;
+  }
+  .main > article .store {
+    display: none;
+    width: 400px;
+    height: 50vh;
+    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    margin: 0 auto;
+  }
+  .main > article .store.flex {
+    display: flex;
+  }
+  .main > article .store.active {
+    flex-direction: column;
+  }
+  .main > article .store .store-img {
+    width: 100%;
+  }
+  .main > article .store .store-img > figure {
+    height: 200px;
+  }
+  .main > article .store .padding {
+    padding: 0;
+  }
+  .main > article .store .store-name {
+    margin-top: 10px;
+  }
+  .main > article .store .look-detail1 {
+    display: none;
+    margin-top: 20px;
+  }
+  .main > article .store .look-detail2 {
+    display: flex;
+  }
+  .main > article .store .eat_title {
+    justify-content: start;
+  }
+  .main > article .store .eat_title figure {
+    height: 40px;
+    gap: 10px;
+    align-items: center;
+  }
+  .main > article .store .eat_title figure .eat_logo {
+    height: 40px;
+  }
+  .main > article .store .eat_title figure figcaption h2 {
+    margin: 0;
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .main > article .store .eat_list li {
+    width: 48%;
+  }
+}
+.sub1 {
+  width: 1200px;
+  margin: 3% auto;
+  font-family: "pretendard";
+  font-weight: 500;
+}
+.sub1 .wrapper h2 {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+}
+.sub1 .wrapper ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.sub1 .wrapper ul li {
+  border: 1px solid #ccc;
+  margin-bottom: 6%;
+  width: 46%;
+  height: 45vh;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.sub1 .wrapper ul li .swiper-wrapper {
+  width: 100%;
+  height: 60%;
+}
+.sub1 .wrapper ul li .string {
+  padding: 0 30px;
+}
+.sub1 .wrapper ul li .string p:nth-of-type(1) {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+}
+.sub1 .wrapper ul li .string p:nth-of-type(2) {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+.sub1 .wrapper ul li .swiper-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+.sub1 .wrapper ul li .swiper-slide img {
+  height: 100%;
+}
+.sub1 .popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: none;
+}
+.sub1 .popup i {
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+}
+.sub1 .popup .popup1 {
+  width: 60%;
+  height: 80vh;
+  border-radius: 20px;
+  background-color: white;
+  padding: 30px 120px 30px 120px;
+  overflow: hidden;
+}
+.sub1 .popup .popup1 > p {
+  text-align: center;
+}
+.sub1 .popup .popup1 > p:nth-of-type(1) {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.3;
+  margin: 3% auto;
+}
+.sub1 .popup .popup1 > p:nth-of-type(2) {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 80%;
+  margin: 2% auto;
+}
+.sub1 .popup .popup1 div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow-y: scroll;
+  max-height: 70%;
+  padding-right: 5%;
+  margin-left: 5%;
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar {
+  color: white;
+  border-radius: 15px;
+  width: 10px;
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.sub1 .popup .popup1 div figure {
+  text-align: center;
+  width: 46%;
+  cursor: pointer;
+}
+.sub1 .popup .popup1 div figure p {
+  width: 100%;
+}
+.sub1 .popup .popup1 div figure p img {
+  height: 250px;
+  border-radius: 15px;
+}
+.sub1 .popup .popup1 div figure figurecaption {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .sub1 {
+    width: 80%;
+  }
+  .sub1 .wrapper ul li {
+    height: 50vh;
+  }
+  .sub1 .wrapper ul li .string {
+    padding: 0 12px;
+  }
+  .sub1 .wrapper ul li .string p:nth-of-type(1) {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .sub1 .wrapper ul li .string p:nth-of-type(2) {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .sub1 .popup .popup1 {
+    width: 90%;
+    padding: 60px 50px 85px 50px;
+  }
+  .sub1 .popup .popup1 p:nth-of-type(1) {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 21px;
+  }
+  .sub1 .popup .popup1 p:nth-of-type(2) {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .sub1 h2 {
+    margin-left: 10%;
+  }
+  .sub1 .wrapper ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sub1 .wrapper ul li {
+    width: 80%;
+    height: 48vh;
+  }
+}
+@media (max-width: 480px) {
+  .sub1 {
+    width: 85%;
+  }
+  .sub1 h2 {
+    margin: 4% 0;
+  }
+  .sub1 .wrapper ul {
+    flex-direction: column;
+  }
+  .sub1 .wrapper ul li {
+    width: 100%;
+    height: 45vh;
+  }
+  .sub1 .wrapper ul li .string p:nth-of-type(1) {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .sub1 .wrapper ul li .string p:nth-of-type(2) {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .sub1 .popup .popup1 {
+    width: 90%;
+    padding: 30px 20px 80px 20px;
+    height: 78vh;
+    margin-bottom: 24%;
+    overflow: hidden;
+  }
+  .sub1 .popup .popup1 p:nth-of-type(1) {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .sub1 .popup .popup1 p:nth-of-type(2) {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .sub1 .popup .popup1 div {
+    display: block;
+    margin-bottom: 5%;
+    max-height: 65%;
+  }
+  .sub1 .popup .popup1 div figure {
+    width: 100%;
+  }
+}
+main.sub2 {
+  width: 1200px;
+  min-height: 100vh;
+  margin: 0px auto;
+  z-index: 5;
+  position: relative;
+}
+main.sub2 .list {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+main.sub2 .list h1 {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+}
+main.sub2 .list .listin {
+  display: flex;
+}
+main.sub2 .list .listin .on1 {
+  flex-grow: 1;
+  margin: 0 auto;
+  border: 1px solid #D9D9D9;
+  height: 70px;
+}
+main.sub2 .list .listin .on1 .d {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.sub2 .list .listin .on1.on {
+  background-color: #eee;
+}
+main.sub2 .stores .con {
+  width: 1200px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+main.sub2 .stores .con .on2 {
+  width: 24%;
+  text-align: center;
+  border: 1px solid #eee;
+  margin: 6px 6px;
+  border-radius: 20px;
+}
+main.sub2 .stores .con .on2.active i {
+  color: red;
+}
+main.sub2 .stores .con .on2 b {
+  margin: 10px 17px 10px 15px;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main.sub2 .stores .con .on2 b span i {
+  font-size: 30px;
+  color: #b3b3b3;
+}
+main.sub2 .stores .con .on2 figure {
+  position: relative;
+}
+main.sub2 .stores .con .on2 figure .ad {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+  margin: 10px 17px 10px 25px;
+  position: absolute;
+  top: 75%;
+  color: white;
+}
+main.sub2 .stores .con .on2 figure i {
+  position: absolute;
+  left: 5px;
+  bottom: 15%;
+  color: white;
+}
+main.sub2 .stores .con .on2 figure img {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+  border-radius: 20px 20px 0 0;
+  filter: brightness(0.7);
+}
+main.sub2 .stores .con .on2 p {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+  margin: 10px 17px 10px 15px;
+}
+main.sub2 .stores .text-overflow-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  main.sub2 {
+    width: 90%;
+    margin-bottom: 120px;
+  }
+  main.sub2 .list {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  main.sub2 .list h1 {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 30px;
+  }
+  main.sub2 .list .listin {
+    display: flex;
+  }
+  main.sub2 .list .listin .on1 {
+    flex-grow: 1;
+    margin: 0 auto;
+    border: 1px solid #D9D9D9;
+    height: 70px;
+  }
+  main.sub2 .list .listin .on1 .d {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main.sub2 .list .listin .on1.on {
+    background-color: #eee;
+  }
+  main.sub2 .stores {
+    width: 100%;
+    padding: 10px;
+  }
+  main.sub2 .stores .con {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 50px 0;
+  }
+  main.sub2 .stores .con .on2 {
+    width: 49%;
+    text-align: center;
+    margin: 6px 0;
+    border-radius: 20px;
+  }
+  main.sub2 .stores .con .on2 b {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 16px;
+  }
+  main.sub2 .stores .con .on2 figure {
+    position: relative;
+  }
+  main.sub2 .stores .con .on2 figure .ad {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 14px;
+    text-align: left;
+    margin: 10px 17px 10px 25px;
+    position: absolute;
+    top: 70%;
+    color: white;
+  }
+  main.sub2 .stores .con .on2 figure i {
+    position: absolute;
+    left: 5px;
+    bottom: 20%;
+    color: white;
+  }
+  main.sub2 .stores .con .on2 figure img {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10px;
+    filter: brightness(0.7);
+  }
+  main.sub2 .stores .con .on2 p {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 14px;
+    text-align: left;
+    margin: 10px 17px 10px 15px;
+  }
+  footer > section {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  main.sub2 .list {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  main.sub2 .list h1 {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 30px;
+  }
+  main.sub2 .list .listin {
+    display: flex;
+  }
+  main.sub2 .list .listin .on1 {
+    width: 100%;
+    flex-grow: 0;
+    margin: 0;
+    border: 1px solid #D9D9D9;
+    height: 70px;
+  }
+  main.sub2 .list .listin .on1 .d {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main.sub2 .list .listin .on1.on {
+    background-color: #eee;
+  }
+  main.sub2 .stores {
+    width: 100%;
+    margin: 0;
+  }
+  main.sub2 .stores .con {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0 45px;
+  }
+  main.sub2 .stores .con .on2 {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+    border-radius: 20px;
+  }
+  main.sub2 .stores .con .on2 b {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 15px;
+  }
+  main.sub2 .stores .con .on2 figure {
+    position: relative;
+  }
+  main.sub2 .stores .con .on2 figure .ad {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 17px 10px 25px;
+    position: absolute;
+    top: 60%;
+    color: white;
+  }
+  main.sub2 .stores .con .on2 figure i {
+    position: absolute;
+    left: 5px;
+    bottom: 23%;
+    color: white;
+  }
+  main.sub2 .stores .con .on2 figure img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    filter: brightness(0.7);
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main.sub2 .stores .con .on2 p {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 17px 10px 15px;
+  }
+  footer > section {
+    width: 100%;
+  }
+}
+main.sub3 {
+  margin-top: 50px;
+  margin-bottom: 150px;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+}
+main.sub3 .sub_3_main1 {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+main.sub3 .sub_3_main1 .title {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+}
+main.sub3 .sub_3_main1 .search {
+  width: 40%;
+}
+main.sub3 .sub_3_main1 .search label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f1afaf;
+  border-radius: 30px;
+  padding: 10px;
+}
+main.sub3 .sub_3_main1 .search label input {
+  width: 80%;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  font-weight: bolder;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+main.sub3 .sub_3_main1 .search label .searchbtn {
+  border: 0;
+  background-color: white;
+}
+main.sub3 .sub_3_main1 .search label .searchbtn img {
+  filter: invert(30%) sepia(89%) saturate(5000%) hue-rotate(358deg) brightness(95%) contrast(113%);
+}
+main.sub3 .sub_3_main2 {
+  width: 1200px;
+  margin: 0 auto;
+}
+main.sub3 .sub_3_main2 .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main.sub3 .sub_3_main2 .list li {
+  margin-bottom: 30px;
+  width: 30%;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.14);
+  border-radius: 20px;
+  padding: 20px 30px;
+  background-color: white;
+  cursor: pointer;
+}
+main.sub3 .sub_3_main2 .list li .matname {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main.sub3 .sub_3_main2 .list li .matname p {
+  background-color: #eee;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+main.sub3 .sub_3_main2 .list li .matname span img {
+  width: 34px;
+  height: 34px;
+}
+main.sub3 .sub_3_main2 .list li .star {
+  margin-bottom: 10px;
+  display: flex;
+  width: 50%;
+}
+main.sub3 .sub_3_main2 .list li .star img {
+  width: 100%;
+}
+main.sub3 .sub_3_main2 .list li .img img {
+  width: 100%;
+  height: 155px;
+  border-radius: 20px;
+}
+main.sub3 .sub_3_main2 .list li .say {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+main.sub3 .sub_3_main2 > div.k {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+main.sub3 .sub_3_main2 > div.k .morebtn {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  margin: 0 10px;
+  color: black;
+}
+main.sub3 .r_pop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+main.sub3 .r_pop .popbtn {
+  text-align: center;
+}
+main.sub3 .r_pop .popbtn button {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  margin: 0 10px;
+  color: #fff;
+  cursor: pointer;
+}
+main.sub3 .r_pop.active {
+  display: flex;
+}
+main.sub3 .r_pop .r_pop1 {
+  width: 30%;
+  margin: 0px auto;
+  z-index: 10;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-height: 450px;
+}
+main.sub3 .r_pop .r_pop1 > div {
+  overflow-y: auto;
+  max-height: 390px;
+}
+main.sub3 .r_pop .r_pop1 > div::-webkit-scrollbar {
+  width: 3px;
+  margin-right: 50px;
+  height: 80vh;
+}
+main.sub3 .r_pop .r_pop1 > div::-webkit-scrollbar-thumb {
+  background-color: #000;
+}
+main.sub3 .r_pop .r_pop1 > div::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+main.sub3 .r_pop .r_pop1 > div > * {
+  padding-right: 10px;
+}
+main.sub3 .r_pop .matname {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main.sub3 .r_pop .matname p {
+  background-color: #eee;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+main.sub3 .r_pop .matname span img {
+  width: 34px;
+  height: 34px;
+}
+main.sub3 .r_pop .img {
+  width: 100%;
+  height: 230px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+main.sub3 .r_pop .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+main.sub3 .r_pop .star {
+  margin-bottom: 10px;
+  margin: 0 auto;
+  width: 30%;
+}
+main.sub3 .r_pop .star img {
+  width: 100%;
+}
+main.sub3 .r_pop .say {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  main.sub3 {
+    width: 90%;
+    margin: 0 auto 150px;
+  }
+  main.sub3 .sub_3_main1 {
+    width: 100%;
+  }
+  main.sub3 .sub_3_main2 {
+    width: 100%;
+  }
+  main.sub3 .sub_3_main2 .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main.sub3 .sub_3_main2 .list li .matname {
+    width: 100%;
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 12px;
+  }
+  main.sub3 .sub_3_main2 .list li .matname span img {
+    width: 28px;
+    height: 28px;
+  }
+  main.sub3 .sub_3_main2 .star {
+    width: 30%;
+  }
+  main.sub3 .sub_3_main2 .morebtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #FF6888;
+    margin: 0 10px;
+  }
+  footer > section {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  main.sub3 .sub_3_main2 .list li {
+    width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  main.sub3 .r_pop .r_pop1 {
+    width: 80%;
+  }
+  main.sub3 .sub_3_main1 .search {
+    width: 60%;
+  }
+  main.sub3 .sub_3_main2 .list li .matname {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main.sub3 .sub_3_main2 .list li {
+    width: 100%;
+  }
+}
+.sub4 {
+  margin-bottom: 150px;
+  min-height: 100vh;
+}
+.sub4 article {
+  width: 1200px;
+  margin: 0px auto;
+}
+.sub4 article .search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+}
+.sub4 article .search h2 {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+}
+.sub4 article .search label {
+  position: relative;
+}
+.sub4 article .search label input {
+  width: 400px;
+  border: 2px solid #FFD4DE;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  font-weight: 300;
+}
+.sub4 article .search label button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  font-size: 18px;
+  color: #FF6888;
+  cursor: pointer;
+}
+.sub4 article .all_ul {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.sub4 article .all_ul li {
+  cursor: pointer;
+}
+.sub4 article .all_ul li ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+.sub4 article .all_ul li ul li {
+  padding: 28px 0;
+  width: 10%;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+.sub4 article .all_ul li ul li:nth-of-type(2) {
+  width: 45%;
+}
+.sub4 article .all_ul li:nth-of-type(1) ul {
+  border-top: none;
+  border-bottom: 2px solid #d8e5f2;
+}
+.sub4 article .all_ul li:nth-of-type(1) ul li {
+  cursor: default;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+}
+.sub4 article .all_ul li:nth-of-type(2) ul {
+  border-top: none;
+}
+.sub4 article .popup1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.sub4 article .popup1.active {
+  display: flex;
+}
+.sub4 article .popup1 .popup2 {
+  width: 50%;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 20px;
+  position: relative;
+}
+.sub4 article .popup1 .popup2 button {
+  background: transparent;
+  border: 0;
+  font-size: 40px;
+  position: absolute;
+  top: -45px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sub4 article .popup1 .popup2 > div {
+  padding: 40px;
+  text-align: center;
+}
+.sub4 article .popup1 .popup2 > div h2 {
+  margin-bottom: 0;
+}
+.sub4 article .popup1 .popup2 > div p {
+  margin-top: 5px;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.sub4 article .popup1 .popup2 > div span {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .sub4 {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .sub4 article {
+    width: 100%;
+  }
+  .sub4 article h2 {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .sub4 article .search {
+    margin-bottom: 40px;
+  }
+  .sub4 article .search label input {
+    width: 220px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .sub4 article .all_ul li ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  .sub4 article .all_ul li ul li {
+    padding: 28px 0;
+    width: 20%;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .sub4 article .all_ul li ul li:nth-of-type(2) {
+    width: 37%;
+  }
+  .sub4 article .all_ul li:nth-of-type(1) ul li {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .sub4 article {
+    width: 90%;
+  }
+  .sub4 article h2 {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .sub4 article .search {
+    margin-bottom: 30px;
+  }
+  .sub4 article .search label input {
+    width: 180px;
+    padding: 8px 12px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .sub4 article .search label button {
+    top: 5px;
+    right: 12px;
+    font-size: 14px;
+  }
+  .sub4 article .all_ul li ul {
+    padding: 0;
+  }
+  .sub4 article .all_ul li ul li {
+    padding: 24px 0;
+    width: 16%;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .sub4 article .all_ul li ul li:nth-of-type(2) {
+    width: 37%;
+  }
+  .sub4 article .all_ul li ul li:nth-of-type(3) {
+    width: 28%;
+  }
+  .sub4 article .all_ul li:nth-of-type(1) ul li {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 15px;
+  }
+}
+.sub5 {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto 150px;
+  min-height: 100vh;
+}
+.sub5 .sub5_img figure img {
+  width: 100%;
+  height: 550px;
+  opacity: 0.5;
+}
+.sub5 .rcmd {
+  width: 1200px;
+  margin: auto;
+}
+.sub5 .rcmd h2 {
+  margin: 50px 0;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+}
+.sub5 .rcmd ul {
+  margin-bottom: 65px;
+}
+.sub5 .rcmd ul li {
+  width: 900px;
+  padding: 15px 0;
+  border-bottom: 1px solid #d9d9d9;
+  margin: auto;
+}
+.sub5 .rcmd ul li:nth-of-type(5) label input {
+  border: none;
+  padding: 6px 0;
+}
+.sub5 .rcmd ul li label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+}
+.sub5 .rcmd ul li label input {
+  width: 685px;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+.sub5 .rcmd ul li label .photo::file-selector-button {
+  background-color: #eee;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+.sub5 .rcmd button {
+  display: block;
+  margin: 0 auto;
+  width: 168px;
+  height: 54px;
+  cursor: pointer;
+  border: none;
+  background-color: #d8e5f2;
+  border-radius: 4px;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .sub5 .sub5_img figure img {
+    height: 380px;
+  }
+  .sub5 .rcmd {
+    width: 85%;
+  }
+  .sub5 .rcmd h2 {
+    margin: 30px 0;
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .sub5 .rcmd ul {
+    margin-bottom: 45px;
+  }
+  .sub5 .rcmd ul li {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .sub5 .rcmd ul li:nth-of-type(5) label input {
+    padding: 0;
+  }
+  .sub5 .rcmd ul li label {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .sub5 .rcmd ul li label input {
+    width: 78%;
+    padding: 10px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .sub5 .rcmd ul li label .photo::file-selector-button {
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .sub5 .rcmd button {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .sub5 .sub5_img figure img {
+    height: 280px;
+  }
+  .sub5 .rcmd {
+    width: 85%;
+  }
+  .sub5 .rcmd h2 {
+    margin: 25px 0 15px 0;
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .sub5 .rcmd ul {
+    margin-bottom: 30px;
+  }
+  .sub5 .rcmd ul li {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .sub5 .rcmd ul li:nth-of-type(5) label input {
+    padding: 0;
+  }
+  .sub5 .rcmd ul li label {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .sub5 .rcmd ul li label input {
+    width: 75%;
+    padding: 5px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .sub5 .rcmd ul li label .photo::file-selector-button {
+    background-color: #eee;
+    border: none;
+    padding: 6px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .sub5 .rcmd button {
+    width: 120px;
+    height: 44px;
+    border-radius: 4px;
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 12px;
+  }
+}
+main.wr {
+  z-index: 5;
+  position: relative;
+  margin-bottom: 80px;
+  min-height: 100vh;
+}
+main.wr .write_title {
+  margin-top: 200px;
+  width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+main.wr .write_title h2 {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0 auto;
+}
+main.wr .write_box {
+  width: 1200px;
+  margin: 0px auto;
+}
+main.wr .write_box form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+main.wr .write_box form .heart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main.wr .write_box form .heart p {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 16px;
+}
+main.wr .write_box form .heart p span {
+  padding: 5px 0;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 25px;
+  color: #FF6888;
+}
+main.wr .write_box form .heart .click a {
+  cursor: pointer;
+}
+main.wr .write_box form .heart .click a span {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+main.wr .write_box form .heart .click a span.active {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 25px;
+  color: #FF6888;
+}
+main.wr .write_box form .heart .click a input[type=radio] {
+  display: none;
+}
+main.wr .write_box textarea {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+  height: 20.25em;
+  border: none;
+  resize: none;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+main.wr .write_box textarea:focus {
+  outline: 2px solid #FF6888;
+}
+main.wr .write_box textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+main.wr .write_box textarea:focus::placeholder {
+  color: transparent;
+}
+main.wr .write_box label .file {
+  margin: 20px 0;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  color: #FF6888;
+  vertical-align: middle;
+}
+main.wr .write_box label .file::file-selector-button {
+  width: 150px;
+  height: 30px;
+  background: #F2F2F2;
+  border: none;
+  border-radius: 20px;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+}
+main.wr .write_box form > div {
+  display: flex;
+  justify-content: space-between;
+}
+main.wr .write_box form > div > div {
+  margin: 20px 0;
+}
+main.wr .write_box form > div > div button {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #F2F2F2;
+  margin: 0 10px;
+}
+
+@media (max-width: 1200px) {
+  main.wr .write_box form > div {
+    flex-direction: column;
+  }
+  main.wr .write_title, main.wr .write_box {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  main.wr .write_box form .heart {
+    flex-direction: column;
+  }
+  main.wr .write_box form .heart p {
+    font-size: 14px;
+  }
+}
+.detail {
+  text-align: center;
+  width: 1200px;
+  margin: 0 auto 150px;
+  min-height: 100vh;
+}
+
+.detail-p {
+  width: 1200px;
+  margin-bottom: 150px;
+}
+.detail-p .logo {
+  width: 100%;
+}
+.detail-p .logo img {
+  width: 110px;
+  position: relative;
+  left: 0;
+}
+.detail-p .d-on b {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  color: #FF6888;
+  display: block;
+  margin: 65px auto;
+}
+.detail-p .d-on figure {
+  width: 100%;
+  height: 450px;
+}
+.detail-p .d-on figure img {
+  height: 100%;
+}
+.detail-p p {
+  text-align: left;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.rev {
+  position: relative;
+}
+.rev a {
+  z-index: 20;
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  border-radius: 50%;
+  color: white;
+  background-color: #FF6888;
+}
+.rev a i {
+  padding: 20px;
+  font-size: 50px;
+}
+.rev a.fav {
+  bottom: 220px;
+}
+.rev a.fav.active {
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+.rev a.fav.active i {
+  color: red;
+}
+
+/* ===============================media================================ */
+@media (max-width: 1200px) {
+  .detail-p {
+    width: 100%;
+  }
+  .detail {
+    width: 90%;
+  }
+  .detail .d-list .d-on b figure {
+    margin-bottom: 50px;
+  }
+  .detail .d-list .d-on b p {
+    margin: 0 auto;
+  }
+  .detail .d-list .d-on .des {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  .detail .d-list .d-on p {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=common.css.map */

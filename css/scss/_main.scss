@@ -1,0 +1,398 @@
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.detaild, .look-detail2 > div:nth-of-type(2){cursor: pointer;}
+.column{
+    display: flex;
+    flex-direction: column;
+    @include pr-r{font-size:16px;}
+    margin-right: 15px;
+    >div{
+        margin-bottom: 10px;
+        height: 25px;
+        color: #787878;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+.icon{
+    width: 17px;
+}
+
+.deco-left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10%;
+}
+
+.deco-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10%;
+}
+
+.main{
+    background-image: url("../images/main-img/summer_bg_main_map.jpg.png");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    .eat_title > span {display: none;}
+    &::before{
+        content: "";
+        z-index: 0;
+        top:0;
+        width: 206px;
+        height: 275px;
+        background-image: url(../images/main-img/div.visual-deco-left.png);
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+    &::after{
+        content: '';
+        z-index: -1;
+        width: 174px;
+        height: 366px;
+        display: block;
+        position: absolute;
+        top:0; right:0;
+        background-position: right top;
+        background-size: 100%;
+        background-image: url("../images/main-img/div.visual-deco-right.png");
+    }
+    > article {
+        height: 100vh; width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        > button{
+            display: none;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 20vh;
+            font-size: 40px;
+            border: 0;
+            background: transparent;
+            font-weight: 700;
+            z-index: 10;
+            color: #000;
+        }
+        canvas{
+            margin-left:15%;
+            cursor: grab;
+            &.active{
+                cursor: grabbing;
+            }
+            &.over{
+                cursor: pointer;
+            }
+        }
+
+        .store{
+            width: 430px;
+            height: 610px;
+            border-radius: 20px 20px 6px 6px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            z-index: 5;
+
+            .eat_title{
+                figure {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap:10px;
+                    align-items: center;
+                    >p{margin: 5px 0;}
+                    .eat_logo{
+                        height: 40px;
+                    }
+                    figcaption{
+                        h2 {margin:0; @include pr-b{font-size:25px;}}
+                    }
+                }
+            }
+            .eat_list {
+                margin-top: 20px;
+                height: 88%;
+                overflow-y: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-right:3px;
+                &::-webkit-scrollbar {width: 3px; }
+                &::-webkit-scrollbar-thumb { background-color: #000;}
+                &::-webkit-scrollbar-track { background-color: #eee;}
+                li {
+                    width: 48%;
+                    p {
+                        height: 155px;
+                        overflow: hidden;
+                        border-radius: 15px;
+                        img {
+                            height: 100%;
+                        }
+                    }
+                    h2 {@include pr-b{font-size:16px;}}
+                }
+            }
+
+            .padding{
+                padding: 5px;
+            }
+            .store-img{
+                width: 100%;
+                figure {
+                    height: 180px;
+                    overflow: hidden;
+                    position: relative;
+                    >img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                }
+                
+            }
+            
+            .store-name{
+                @include pr-b{font-size:22px;}
+                margin: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                p{
+                    margin:0;
+                    > i {
+                        color:#b3b3b3;
+                        font-size: 30px;
+                    }
+                    &.active i {color:red;}
+                }
+            }
+            
+            .look-detail1{
+                color: #BB4F59;
+                @include pr-b{font-size:18px;};
+                display: none;
+                margin-right: 15px;
+                gap: 10px;
+            }
+            
+            .look-detail2{
+                color: #BB4F59;
+                @include pr-b{font-size:18px;};
+                display: flex;
+                margin-right: 15px;
+                gap: 10px;
+                border-top: 1px solid lightgray;
+                padding-top: 20px;
+            }
+
+            
+        }
+
+
+        .char1{
+            position: absolute;
+            left: 10%;
+            top: 10%;
+            width: 300px;
+            z-index: 3;
+        }
+        
+        .char2{
+            position: absolute;
+            right: 2%;
+            bottom: 2%;
+            width: 400px;
+            z-index: 3;
+        }
+        
+        .char3{
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            width: 140px;
+            z-index: 3;
+        }
+        .char4{
+            position: absolute;
+            left: 5%;
+            bottom: 5%;
+            width: 400px;
+            z-index: 5;
+        }
+        .char5{
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            width: 1920px;
+            z-index: 0;
+            opacity: 50%;
+        }
+        .char6{
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            width: 300px;
+            z-index: 3;
+        }
+        .char7{
+            position: absolute;
+            left: 7%;
+            bottom: 40%;
+            width: 100px;
+            z-index: 3;
+            transform: rotateY(180deg);
+        }
+        
+        .char8{
+            position: absolute;
+            right: 7%;
+            bottom: 25%;
+            width: 100px;
+            z-index: 3;
+        }
+
+        
+    }
+}
+
+@media (max-width: 1200px) {
+    .char1, .char2, .char3, .char4,.char7, .char8{
+        display: none;
+    }
+
+    .main {
+        > article {
+            
+            .char5 {width: 100%;}
+            .char6{display: none;
+            }
+            .store{
+                width: 90%;
+                height: 330px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                position: absolute;
+                left: 0; right:0;
+                bottom: 10px;
+                margin: 0 auto;
+                &.active{
+                    flex-direction: column;
+                }
+                .store-img{
+                   width: 48%;
+                   margin-right: 20px;
+                    >figure{
+                        height: 250px;
+                    }
+                }
+                .store-name {margin-top: 0;}
+                .look-detail1{ display: flex; margin-top: 20px;}
+                .look-detail2{ display: none; }
+                .eat_title{
+                    justify-content: start;
+                    figure {
+                        height: 40px;
+                        gap:10px;
+                        align-items: center;
+                        .eat_logo{
+                            height: 40px;
+                        }
+                        figcaption{
+                            h2 {margin:0; @include pr-b{font-size:25px;}}
+                        }
+                    }
+                }
+                .eat_list {
+                    li { width: 18%; }
+                }
+            }
+        }
+    }
+        
+}
+@media (max-width: 480px) {
+    .main > article canvas {
+        margin-left: -136.609px;
+        transform: scale(0.7);
+        position: relative;
+        top: 0;
+        bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    
+    .char1, .char2, .char3, .char4,.char7, .char8{
+        display: none;
+    }
+    .main {
+        > article {
+            .char6{display: none;
+            }
+            .store{
+                display: none;
+                width: 400px;
+                height: 50vh;
+                overflow-x: hidden;
+                flex-direction: column;
+                justify-content: space-between;
+                position: absolute;
+                left: 0; right:0;
+                bottom: 150px;
+                margin: 0 auto;
+                &.flex{
+                    display: flex;
+                }
+                &.active{
+                    flex-direction: column;
+                }
+                .store-img{
+                   width: 100%;
+                    >figure{
+                        height: 200px;
+                    }
+                }
+                .padding { 
+                    padding:0;
+                }
+                .store-name {margin-top: 10px;}
+                .look-detail1{ display: none; margin-top: 20px;}
+                .look-detail2{ display: flex; }
+                .eat_title{
+                    justify-content: start;
+                    figure {
+                        height: 40px;
+                        gap:10px;
+                        align-items: center;
+                        .eat_logo{
+                            height: 40px;
+                        }
+                        figcaption{
+                            h2 {margin:0; @include pr-b{font-size:25px;}}
+                        }
+                    }
+                }
+                .eat_list {
+                    li { width: 48%; }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,195 @@
+@import './scss/_mixin';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
+
+/* reset */
+* {box-sizing: border-box;}
+html, body {@include mp-reset; position: relative; overflow-x:hidden ;}
+img {width:100%; object-fit: cover; vertical-align: middle;}
+ul {list-style: none; @include mp-reset;}
+figure,article {@include mp-reset;}
+a {text-decoration: none; color:#000;}
+.code_insert {cursor: pointer;}
+header {
+    width: 100%;
+    position: fixed; top:0;
+    z-index: 6;
+    > section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:20px 0;
+        width: 1200px; margin:0px auto;
+        left:0; right:0;
+        z-index: 1;
+        > figure {
+            width: 220px;
+        }
+        > nav {
+            width: calc(100% - 220px);
+            > ul {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap : 30px;
+                > li {
+                    position: relative;
+                    @include pr-r{font-size:1.5rem;}
+                    cursor: pointer;
+                    &.active{
+                         @include pr-b{font-size:1.5rem;}
+                    }
+                    // &:hover{
+                    //     > ul{display: block;}
+                    // }
+                    > ul{
+                        position: absolute;
+                        display: none;
+                        background: rgba(255,255,255,0.7);
+                        width: 150px;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                        left:-30px;
+                        > li {
+                            padding:10px 0;
+                            @include pr-r{font-size:1.5rem;}
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    width: 100%;
+    position: relative;
+    > section {
+        position: absolute;
+        bottom:0; left:0; right:0;
+        width: 1200px;
+        margin: 0px auto;
+        display: flex;
+    }
+    > .gnb {
+        width: 100%;
+        position: fixed;
+        bottom:0; left:0;
+        display: none;
+        background: #fff;
+        z-index: 10;
+        > ul {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+            > li {
+                width: calc(100% / 4);
+                padding:10px 0;
+                > figure{
+                    img {width:45px; height:45px;}
+                    > figcaption{ margin-top:10px; @include pr-r{font-size:1rem;}} 
+                }
+            }
+        }
+    }
+}
+
+header.sub{
+    position: sticky;
+    top:0; background: #fff;
+    z-index: 6;
+}
+
+
+footer.sub {
+    &::before{
+        content: '';
+        background-image: url('../images/KakaoTalk_20230808_171021953.png');
+        width: 431px;
+        height: 672px;
+        display: block;
+        position: absolute;
+        left:0; bottom:0;
+    }
+    &::after{
+        content: '';
+        background-image: url('../images/KakaoTalk_20230808_171021953_01.png');
+        width: 340px;
+        height: 247px;
+        display: block;
+        position: absolute;
+        right:0; bottom:0;
+    }
+}
+
+
+.tgnb {
+    width: 1200px; margin:20px auto;
+    ul{
+        display: flex;
+        justify-content: space-between; align-items: center;
+        border-top:1px solid #eee;
+        border-bottom:1px solid #eee;
+        height: 45px;
+        li {
+            padding: 0 20px;
+            @include pr-b{font-size:18px;}
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width:1200px){
+    .tgnb {width: 100%;}
+    header{
+        position: fixed;
+        > section{
+            width: 90%;
+            flex-direction: column;
+            justify-content: center;
+            > nav {
+                width: 100%;
+                > ul{
+                    justify-content: center;
+                }
+            }
+        }
+        &.sub{
+            position: sticky;
+        }
+    }
+}
+
+
+@media (max-width:480px){
+    header{
+        > section{
+            > nav {
+                display: none;
+            }
+        }
+        
+    }
+    footer{
+        .gnb{
+            display: block;
+            z-index: 10;
+        }
+        &.sub::before{
+            display: none;
+        }
+    }
+}
+
+@import './scss/_main';
+@import './scss/_sub1';
+@import './scss/_sub2';
+@import './scss/_sub3';
+@import './scss/_sub4';
+@import './scss/_sub5';
+
+
+@import './scss/_write';
+@import './scss/_detail';

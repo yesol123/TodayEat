@@ -1,0 +1,236 @@
+.sub4{
+  margin-bottom:150px;
+  min-height: 100vh;
+  article{
+    width: 1200px;
+    margin:0px auto;
+    .search{
+      display: flex;
+      justify-content: space-between; align-items: center;
+      margin-bottom:45px;
+        h2{
+          @include pr-b{font-size: 25px;}
+        }
+      label{
+        position:relative;
+        input{
+          width:400px;
+          border:2px solid #FFD4DE;
+          padding:10px 20px;
+          border-radius: 50px;
+          @include pr-r{
+            font-size: 16px;
+            font-weight: 300;
+          }
+        }
+        button{
+          position: absolute;
+          top:10px;
+          right:20px;
+          padding:0;
+          border:none;
+          background-color: #fff;
+          font-size: 18px;
+          color:#FF6888;
+          cursor: pointer;
+        }
+      }
+    }
+    .all_ul{
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      li{
+        cursor: pointer;
+        ul{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding:0 60px;
+          border-top: 1px solid #ddd;
+          text-align: center;
+          li{
+            padding:28px 0;
+            width:10%;
+            @include pr-r{
+              font-size: 16px;
+            }
+            &:nth-of-type(2){
+              width:45%;
+            }
+          }
+        }
+        &:nth-of-type(1){
+          ul{
+            border-top:none;
+            border-bottom: 2px solid #d8e5f2;
+            li{
+              cursor:default;
+              @include pr-b{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+        &:nth-of-type(2){
+          ul{
+            border-top:none;
+          }
+        }
+      }
+    }
+    .popup1{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      &.active{
+        display: flex;
+      }
+      .popup2{
+        width:50%;
+        height:50%;
+        background-color: #fff;
+        border-radius: 20px;
+        position: relative;
+        button {
+          background: transparent;
+          border:0;
+          font-size: 40px;
+          position: absolute;
+          top:-45px;
+          left:0; right:0;
+          margin:0 auto;
+          color:#fff; font-weight: 700;
+          cursor: pointer;
+        }
+        > div {
+          padding: 40px;
+          text-align: center;
+          h2 {margin-bottom:0;}
+          p {margin-top:5px; font-size:16px; margin-bottom:40px;}
+          span {font-size: 18px; margin-top:20px;}
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:481px) and (max-width:1200px){
+  .sub4{
+    width: 90%; margin: 0 auto;
+    article{
+      width:100%;
+      h2{
+        @include pr-b{
+          font-size: 25px;
+        }
+      }
+      .search{
+        margin-bottom:40px;
+        label{
+          input{
+            width:220px;
+            @include pr-r{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .all_ul{
+        li{
+          ul{
+            display: flex;
+            justify-content: space-between;
+            padding:0 10px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            li{
+              padding:28px 0;
+              width:20%;
+              @include pr-r{
+                font-size: 15px;
+              }
+              &:nth-of-type(2){
+                width:37%;
+              }
+            }
+          }
+          &:nth-of-type(1){
+            ul{
+              li{
+                @include pr-b{
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:480px){
+  .sub4{
+    article{
+      width:90%;
+      h2{
+        @include pr-b{
+          font-size: 20px;
+        }
+      }
+      .search{
+        margin-bottom:30px;
+        label{
+          input{
+            width:180px;
+            padding:8px 12px;
+            @include pr-r{
+              font-size: 12px;
+            }
+          }
+          button{
+            top:5px;
+            right:12px;
+            font-size: 14px;
+          }
+        }
+      }
+      .all_ul{
+        li{
+          ul{
+            padding:0;
+            li{
+              padding:24px 0;
+              width:16%;
+              @include pr-r{
+                font-size: 12px;
+              }
+              &:nth-of-type(2){
+                width:37%;
+              }
+              &:nth-of-type(3){
+                width:28%;
+              }
+            }
+          }
+          &:nth-of-type(1){
+            ul{
+              li{
+                @include pr-b{
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
